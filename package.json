@@ -1,0 +1,27 @@
+{
+  "name": "one-page",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/onePage.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src -d dist --presets=babili",
+    "watch": "babel -w src -d dist --presets=babili",
+    "prepublish": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lukawski/onePage.js.git"
+  },
+  "author": "Kacper Łukawski",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lukawski/onePage.js/issues"
+  },
+  "homepage": "https://github.com/lukawski/onePage.js#readme",
+  "devDependencies": {
+    "babel-cli": "^6.24.0",
+    "babel-preset-latest": "^6.24.0",
+    "babili": "0.0.12"
+  }
+}

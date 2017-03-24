@@ -1,0 +1,54 @@
+<html>
+  <head>
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        overflow: hidden;
+      }
+      
+      .section {
+        height: 100%;
+        position: absolute;
+        left: 0;
+        right: 0;
+        font-size: 100px;
+        text-align: center;
+        font-weight: 900;
+        color: white;
+        transition: all 1s;
+        transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
+        perspective: 1000px;
+      }
+      
+      .flex {
+        transition: all 1s;
+        transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
+        transform-style: preserve-3d;
+      }
+      
+      .outofview {
+        transform: translate3d(0, -100vh, 0);
+        transform-style: preserve-3d;
+      }
+      
+      .red {
+        background: red;
+      }
+      
+      .blue {
+        background: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <!--<div class="flex">-->
+      <section class="section red">1</section>
+      <section class="section blue">2</section>
+      <section class="section red">3</section>
+      <section class="section blue">4</section>
+    <!--</div>-->
+    
+    <script src="../dist/onePage.js"></script>
+  </body>
+</html>
