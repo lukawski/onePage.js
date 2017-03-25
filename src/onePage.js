@@ -1,39 +1,51 @@
-document.addEventListener('DOMContentLoaded', function (e) {  
-  var animComplete = true
-  var elements = document.querySelectorAll('.section')
-  var elementsL = elements.length
-  var nextEl = 0
-  
-  /*window.addEventListener('wheel', function (e) {
-    document.querySelector('.flex').style.transform = 'translateY(-100vh)'
-  })*/
+class OnePage {
+  constructor(options) {
+    this.mode = options.mode
+    this.animComplete = true
+    console.log(options, this.mode)
+  }
 
-  for (let i = 0; i < elementsL; i++) {
-    elements[i].style.zIndex = elementsL - i
-    elements[i].addEventListener('transitionend', function (e) {
-      animComplete = true
+  stackMode (elements) {
+    const elementsL = elements.length
+    var nextEl = 0
+
+    for (let i = 0; i < elementsL; i++) {
+      elements[i].style.zIndex = elementsL - i
+      elements[i].addEventListener('transitionend', (e) => {
+        this.animComplete = true
+      })
+    }
+
+    window.addEventListener('wheel', (e) => {
+      console.log(this.animComplete, this)
+      if (!this.animComplete) return false
+      console.log('!')
+      
+      if (e.deltaY > 0) {
+        if (nextEl === elementsL - 1) return false
+        
+        this.animComplete = false
+        elements[nextEl].classList.toggle('outofview')
+        nextEl++
+      } else {
+        if (nextEl === 0) return false
+        
+        this.animComplete = false
+        nextEl--
+        elements[nextEl].classList.toggle('outofview')
+      }
     })
   }
-  
-  window.addEventListener('wheel', function (e) {
-    if (!animComplete) return false
+
+  normalMode (elements) {
     
-    if (e.deltaY > 0) {
-      if (nextEl === elementsL - 1){
-       return false
-      }
-      
-      animComplete = false
-      elements[nextEl].classList.toggle('outofview')
-      nextEl++
-    } else {
-      if (nextEl === 0) {
-       return false
-      }
-      
-      animComplete = false
-      nextEl--
-      elements[nextEl].classList.toggle('outofview')
-    }
-  })
-})
+  }
+
+  initPage () {
+    var elements = document.querySelectorAll('.section')
+
+    if (!elements.length) return console.error('Couldn\'t fetch elements')
+
+    this.mode === 'stack' ? this.stackMode(elements) : this.normalMode(elements)
+  }
+}

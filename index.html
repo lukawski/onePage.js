@@ -28,7 +28,7 @@
       }
       
       .outofview {
-        transform: translate3d(0, -100vh, 0);
+        transform: translateY(-100vh);
         transform-style: preserve-3d;
       }
       
@@ -49,6 +49,12 @@
       <section class="section blue">4</section>
     <!--</div>-->
     
-    <script src="onePage.js"></script>
+    <script src="./dist/onePage.min.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function (e) {
+        const onePage = new OnePage({ mode: 'stack' })
+        onePage.initPage()
+      })
+    </script>
   </body>
 </html>
