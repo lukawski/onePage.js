@@ -5,8 +5,7 @@
   "main": "dist/onePage.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "babel src -d dist --presets=babili",
-    "watch": "babel -w src -d dist --presets=babili",
+    "build": "gulp js",
     "prepublish": "npm run build"
   },
   "repository": {
@@ -20,8 +19,12 @@
   },
   "homepage": "https://github.com/lukawski/onePage.js#readme",
   "devDependencies": {
-    "babel-cli": "^6.24.0",
-    "babel-preset-latest": "^6.24.0",
-    "babili": "0.0.12"
+    "babel-core": "^6.24.0",
+    "babel-preset-es2015": "^6.24.0",
+    "browser-sync": "^2.18.8",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-uglify": "^2.1.2"
   }
 }
