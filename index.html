@@ -9,9 +9,9 @@
       
       .section {
         height: 100%;
-        position: absolute;
+        /*position: absolute;
         left: 0;
-        right: 0;
+        right: 0;*/
         font-size: 100px;
         text-align: center;
         font-weight: 900;
@@ -21,7 +21,7 @@
         perspective: 1000px;
       }
       
-      .flex {
+      .sections-container {
         transition: all 1s;
         transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
         transform-style: preserve-3d;
@@ -42,17 +42,17 @@
     </style>
   </head>
   <body>
-    <!--<div class="flex">-->
+    <div id="container" class="sections-container">
       <section class="section red">1</section>
       <section class="section blue">2</section>
       <section class="section red">3</section>
       <section class="section blue">4</section>
-    <!--</div>-->
+    </div>
     
     <script src="./dist/onePage.min.js"></script>
     <script>
       document.addEventListener('DOMContentLoaded', function (e) {
-        const onePage = new OnePage({ mode: 'stack' })
+        const onePage = new OnePage({ mode: 'normal' })
         onePage.initPage()
       })
     </script>

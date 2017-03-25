@@ -2,7 +2,6 @@ class OnePage {
   constructor(options) {
     this.mode = options.mode
     this.animComplete = true
-    console.log(options, this.mode)
   }
 
   stackMode (elements) {
@@ -17,9 +16,7 @@ class OnePage {
     }
 
     window.addEventListener('wheel', (e) => {
-      console.log(this.animComplete, this)
       if (!this.animComplete) return false
-      console.log('!')
       
       if (e.deltaY > 0) {
         if (nextEl === elementsL - 1) return false
@@ -37,15 +34,42 @@ class OnePage {
     })
   }
 
-  normalMode (elements) {
-    
+  normalMode (container) {
+    var translationValue = 0
+
+    container.addEventListener('transitionend', (e) => {
+      this.animComplete = true
+    })
+
+    window.addEventListener('wheel', (e) => {
+      if (!this.animComplete) return false
+
+      if (e.deltaY > 0) {        
+        this.animComplete = false
+        translationValue += -100
+        container.style.transform = `translateY(${translationValue}vh)`
+        
+      } else {
+        this.animComplete = false   
+        translationValue += 100
+        container.style.transform = `translateY(${translationValue}vh)`
+      }
+    })
   }
 
   initPage () {
-    var elements = document.querySelectorAll('.section')
+    if (this.mode === 'stack') {
+      var elements = document.querySelectorAll('.section')
 
-    if (!elements.length) return console.error('Couldn\'t fetch elements')
+      if (!elements.length) return console.error('Couldn\'t fetch elements')
 
-    this.mode === 'stack' ? this.stackMode(elements) : this.normalMode(elements)
+      this.stackMode(elements)
+    } else {
+      var container = document.querySelector('#container')
+      
+      if (container === null) return console.error('Couldn\'t fetch element')
+
+      this.normalMode(container)
+    }
   }
 }
