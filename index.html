@@ -52,7 +52,10 @@
     <script src="./dist/onePage.min.js"></script>
     <script>
       document.addEventListener('DOMContentLoaded', function (e) {
-        const onePage = new OnePage({ mode: 'normal' })
+        const onePage = new OnePage({ 
+          mode: 'normal' ,
+          containerId: '#container'
+        })
         onePage.initPage()
       })
     </script>
