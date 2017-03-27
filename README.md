@@ -8,6 +8,11 @@
 
 ## Usage
 
+```HTML
+<link rel="stylesheet" href="onePage.min.css">
+<script src="onePage.min.js"></script>
+```
+
 You can choose one of two modes: **stack** or **normal**.
 
 ### Stack mode
