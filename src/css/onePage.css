@@ -33,3 +33,14 @@ html, body {
   align-items: center;
   justify-content: center;
 }
+
+.navbar {
+  position: absolute;
+  z-index: 1;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.navbar.right {
+  right: 0;
+}
