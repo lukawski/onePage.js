@@ -11,7 +11,7 @@ browserSync.create()
 gulp.task('serve', ['js'], () => {
   browserSync.init({
     server: {
-      baseDir: './'
+      baseDir: './docs'
     }
   })
 
@@ -23,6 +23,12 @@ gulp.task('js', () => {
   gulp.src(path)
     .pipe(babel().on('error', handleJSErrors))
     .pipe(gulp.dest('dist'))
+
+  gulp.src(path)
+    .pipe(concat('onePage.min.js'))
+    .pipe(babel().on('error', handleJSErrors))
+    .pipe(uglify().on('error', handleJSErrors))
+    .pipe(gulp.dest('docs'))
 
   return gulp.src(path)
     .pipe(concat('onePage.min.js'))
