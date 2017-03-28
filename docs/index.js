@@ -1,5 +1,6 @@
 const page = new OnePage({
-  mode: 'normal',
-  containerId: '#container'
+  mode: 'stack',
+  containerId: '#container',
+  navbar: true
 })
 page.initPage()

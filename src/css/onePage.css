@@ -56,13 +56,20 @@ html, body {
 button {
   width: 4em;
   font-size: 1.15em;
-  background: transparent;
+  background: #3a3a3a;
   outline: none;
   border: 2px solid #3a3a3a;
   border-radius: 2px;
   margin: 0.5em;
+  color: white;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+button:hover {
+  cursor: pointer;
 }
 
 button:active {
   transform: translateY(2px);
 }
+
