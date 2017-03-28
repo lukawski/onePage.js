@@ -1,11 +1,47 @@
+<!DOCTYPE>
 <html lang="en">
   <head>
     <title>onePage.js</title>
-    <style>      
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta name="description" content="JavaScript plugin for creating full page websites and presentations.">
+    <meta name='theme-color', content='#CAE4FD'>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&amp;subset=latin-ext" rel="stylesheet">
+    <style>
+      html {
+        font-family: 'Roboto', sans-serif;
+        font-size: 16px;
+      }
+      h1,h2,h3,h4,h5,h6 {
+        margin: 0;
+      }
+      a {
+        color: white;
+        text-decoration: none;
+      }
+      header h1 {
+        font-size: 4em;
+      }
+      header h2 {
+        font-size: 2em;
+      }
+      .bigger {
+        font-size: 2.5em;
+      }
+      .bigger-p {
+        font-size: 2em;
+      }
+      .markup {
+        background: #424242;
+        padding: 10px;
+        margin-top: 1.5em;
+        -webkit-box-shadow: inset 0px 0px 32px 0px rgba(0,0,0,0.75);
+      -moz-box-shadow: inset 0px 0px 32px 0px rgba(0,0,0,0.75);
+      box-shadow: inset 0px 0px 32px 0px rgba(0,0,0,0.75);
+      }
       .red {
         background: #7986CB;
-      }
-      
+      }      
       .blue {
         background: #3949AB;
       }
@@ -16,22 +52,47 @@
     <div id="container" class="sections-container">
       <nav class="navbar">
         <button type="button" class="link">
-          1
+          Home
         </button>
         <button type="button" class="link">
-          2
+          About
         </button>
         <button type="button" class="link">
-          3
-        </button>
-        <button type="button" class="link">
-          4
+          Contact
         </button>
       </nav>
-      <section class="section stack red center"><h1>1</h1></section>
-      <section class="section stack blue center">2</section>
-      <section class="section stack red center">3</section>
-      <section class="section stack blue center">4</section>
+
+      <section class="section stack red center">
+        <header class="text-center">
+          <h1>onePage.js</h1>
+          <h2>Create beautiful full page websites and presentations.</h2>
+        </header>
+      </section>
+
+      <section class="section stack blue center">
+        <div class="text-center">
+          <header>
+            <h2 class="bigger">Simple markup let's you dive right into page creation</h2>
+          </header>
+          <section class="markup">
+            <code>
+              <p>&#60;section class="section stack">1&#60;/section></p>
+              <p>&#60;section class="section stack">2&#60;/section></p>
+              <p>&#60;section class="section stack">3&#60;/section></p>
+              <p>&#60;section class="section stack">4&#60;/section></p>
+            </code>
+          </section>
+          <p class="bigger-p">You can find full documentation on <a href="https://github.com/lukawski/onePage.js#one-page">GitHub</a></p>
+        </div>
+      </section>
+
+      <section class="section stack red center">
+        <header class="text-center">
+          <h1>You can contact me directly at <a href="mailto:ka.lukawski@gmail.com">ka.lukawski@gmail.com</a> </h1>
+          <h2 class="bigger"> Or find me here: </h2>
+          
+        </header>
+      </section>
     </div>
     
     <script src="onePage.min.js"></script>

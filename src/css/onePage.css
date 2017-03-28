@@ -38,6 +38,15 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.full-w {
+  width: 100%;
 }
 
 .navbar {
@@ -54,8 +63,8 @@ html, body {
 }
 
 button {
-  width: 4em;
-  font-size: 1.15em;
+  width: 5em;
+  font-size: 1.20em;
   background: #3a3a3a;
   outline: none;
   border: 2px solid #3a3a3a;
