@@ -35,6 +35,8 @@ class OnePage {
     const maxScrollCount = elements.length - 1
     var translationValue = 0    
     var scrollCount = 0
+    var nav = document.querySelector('.navbar')
+    console.log(nav)
 
     container.addEventListener('transitionend', (e) => {
       this.animComplete = true
@@ -46,11 +48,13 @@ class OnePage {
       if (e.deltaY > 0 && scrollCount !== maxScrollCount) {
         this.animComplete = false
         translationValue += -100
+        nav.style.transform = `translateY(${Math.abs(translationValue)}vh)`
         container.style.transform = `translateY(${translationValue}vh)`
         scrollCount++
       } else if (e.deltaY < 0 && scrollCount) {
         this.animComplete = false   
         translationValue += 100
+        nav.style.transform = `translateY(${Math.abs(translationValue)}vh)`
         container.style.transform = `translateY(${translationValue}vh)`
         scrollCount--
       }
