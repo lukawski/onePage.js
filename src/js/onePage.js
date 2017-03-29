@@ -81,6 +81,8 @@ class OnePage {
     window.addEventListener('wheel', (e) => {
       if (!this.animComplete) return false
 
+      buttons[scrollCount].classList.toggle('active')
+
       if (e.deltaY > 0 && scrollCount !== maxScrollCount) {
         this.animComplete = false
 
@@ -90,6 +92,7 @@ class OnePage {
         container.style.transform = `translateY(${translationValue}vh)`
 
         scrollCount++
+        buttons[scrollCount].classList.toggle('active')
       } else if (e.deltaY < 0 && scrollCount) {
         this.animComplete = false
 
@@ -99,6 +102,7 @@ class OnePage {
         container.style.transform = `translateY(${translationValue}vh)`
 
         scrollCount--
+        buttons[scrollCount].classList.toggle('active')
       }
     })
 
@@ -107,6 +111,8 @@ class OnePage {
         if (!this.animComplete) return false
 
         var comp = i * -100;
+
+        buttons[scrollCount].classList.toggle('active')
 
         if (comp > translationValue) {
           this.animComplete = false
@@ -117,6 +123,8 @@ class OnePage {
           container.style.transform = `translateY(${translationValue}vh)`
 
           scrollCount = i
+
+          buttons[scrollCount].classList.toggle('active')
         } else if (comp < translationValue) {
           this.animComplete = false
 
@@ -126,6 +134,8 @@ class OnePage {
           container.style.transform = `translateY(${translationValue}vh)`
 
           scrollCount = i
+
+          buttons[scrollCount].classList.toggle('active')
         }
       })
     }
