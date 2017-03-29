@@ -80,9 +80,7 @@ class OnePage {
     })
 
     window.addEventListener('wheel', (e) => {
-      if (!this.animComplete) return false
-
-      
+      if (!this.animComplete) return false      
 
       if (e.deltaY > 0 && scrollCount !== maxScrollCount) {
         this.animComplete = false

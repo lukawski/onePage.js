@@ -10,6 +10,7 @@
 - [ ] responsive navbar
 - [ ] touch support
 - [ ] navigating by arrow keys
+- [ ] horizontal scroll
 
 ## Usage
 
