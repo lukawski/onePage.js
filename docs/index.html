@@ -16,8 +16,11 @@
         margin: 0;
       }
       a {
-        color: white;
+        color: inherit;
         text-decoration: none;
+      }
+      .white {
+        color: white;
       }
       header h1 {
         font-size: 4em;
@@ -29,7 +32,7 @@
         font-size: 2.5em;
       }
       .bigger-p {
-        font-size: 2em;
+        font-size: 2.2em;
       }
       .markup {
         padding: 10px;
@@ -41,7 +44,14 @@
       .blue {
         background: #3949AB;
       }
+      .mt {
+        margin-top: 1em;
+      }
+      i {
+        margin: 5px;
+      }
     </style>
+    <script src="https://use.fontawesome.com/fd43abc220.js"></script>
     <link rel="stylesheet" href="onePage.min.css">
   </head>
   <body>
@@ -58,14 +68,15 @@
         </button>
       </nav>
 
-      <section class="section red center">
+      <section class="section stack red center">
         <header class="text-center">
           <h1>onePage.js</h1>
           <h2>Create beautiful full page websites and presentations.</h2>
+          <a href="https://github.com/lukawski/onePage.js"> <i class="fa fa-github fa-4x" aria-hidden="true"></i> </a>
         </header>
       </section>
 
-      <section class="section blue center">
+      <section class="section stack blue center">
         <div class="text-center">
           <header>
             <h2 class="bigger">Simple markup let's you dive right into page creation</h2>
@@ -73,15 +84,16 @@
           <section class="markup">
             <img src="onePage.png" alt="HTML markup">
           </section>
-          <p class="bigger-p">You can find full documentation on <a href="https://github.com/lukawski/onePage.js#one-page">GitHub</a></p>
+          <p class="bigger-p">You can find full documentation on <a href="https://github.com/lukawski/onePage.js#one-page" class="white">GitHub</a></p>
         </div>
       </section>
 
-      <section class="section red center">
+      <section class="section stack red center">
         <header class="text-center">
-          <h1>You can contact me directly at <a href="mailto:ka.lukawski@gmail.com">ka.lukawski@gmail.com</a> </h1>
-          <h2 class="bigger"> Or find me here: </h2>
-          
+          <h1>You can contact me directly at <a href="mailto:ka.lukawski@gmail.com" class="white">ka.lukawski@gmail.com</a> </h1>
+          <h2 class="bigger mt"> Or find me here: </h2>
+          <a href="https://github.com/lukawski"> <i class="fa fa-github fa-4x" aria-hidden="true"></i> </a>
+          <a href="https://www.linkedin.com/in/kacper-%C5%82ukawski-a83127128/"> <i class="fa fa-linkedin fa-4x" aria-hidden="true"></i> </a>
         </header>
       </section>
     </div>
