@@ -20,11 +20,10 @@ class OnePage {
     window.addEventListener('wheel', (e) => {
       if (!this.animComplete) return false
       
-      buttons[nextEl].classList.toggle('active')
-      
       if (e.deltaY > 0 && nextEl !== elementsL - 1) {        
         this.animComplete = false
 
+        buttons[nextEl].classList.toggle('active')
         elements[nextEl].classList.toggle('outofview')
 
         nextEl++
@@ -32,6 +31,8 @@ class OnePage {
         buttons[nextEl].classList.toggle('active')
       } else if (e.deltaY < 0 && nextEl) {        
         this.animComplete = false
+
+        buttons[nextEl].classList.toggle('active')
 
         nextEl--
         
@@ -81,13 +82,14 @@ class OnePage {
     window.addEventListener('wheel', (e) => {
       if (!this.animComplete) return false
 
-      buttons[scrollCount].classList.toggle('active')
+      
 
       if (e.deltaY > 0 && scrollCount !== maxScrollCount) {
         this.animComplete = false
 
         translationValue += -100
 
+        buttons[scrollCount].classList.toggle('active')
         nav.style.transform = `translateY(${Math.abs(translationValue)}vh)`
         container.style.transform = `translateY(${translationValue}vh)`
 
@@ -98,6 +100,7 @@ class OnePage {
 
         translationValue += 100
 
+        buttons[scrollCount].classList.toggle('active')
         nav.style.transform = `translateY(${Math.abs(translationValue)}vh)`
         container.style.transform = `translateY(${translationValue}vh)`
 
@@ -112,13 +115,13 @@ class OnePage {
 
         var comp = i * -100;
 
-        buttons[scrollCount].classList.toggle('active')
 
         if (comp > translationValue) {
           this.animComplete = false
 
           translationValue = comp
 
+          buttons[scrollCount].classList.toggle('active')
           nav.style.transform = `translateY(${Math.abs(translationValue)}vh)`
           container.style.transform = `translateY(${translationValue}vh)`
 
@@ -130,6 +133,7 @@ class OnePage {
 
           translationValue = comp
 
+          buttons[scrollCount].classList.toggle('active')
           nav.style.transform = `translateY(${Math.abs(translationValue)}vh)`
           container.style.transform = `translateY(${translationValue}vh)`
 
