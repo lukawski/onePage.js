@@ -1,5 +1,5 @@
 const page = new OnePage({
-  mode: 'stack',
+  mode: 'normal',
   containerId: '#container',
   navbar: true
 })

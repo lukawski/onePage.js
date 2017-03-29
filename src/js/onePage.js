@@ -20,29 +20,33 @@ class OnePage {
     window.addEventListener('wheel', (e) => {
       if (!this.animComplete) return false
       
+      buttons[nextEl].classList.toggle('active')
+      
       if (e.deltaY > 0 && nextEl !== elementsL - 1) {        
         this.animComplete = false
 
         elements[nextEl].classList.toggle('outofview')
 
         nextEl++
+        
+        buttons[nextEl].classList.toggle('active')
       } else if (e.deltaY < 0 && nextEl) {        
         this.animComplete = false
 
         nextEl--
-
+        
+        buttons[nextEl].classList.toggle('active')
         elements[nextEl].classList.toggle('outofview')
       }
     })
-
-    if (typeof buttons === 'undefined') return 0
-
-    var buttons = buttons
-
+    
     for (let i = 0; i < buttons.length; i++) {
       buttons[i].addEventListener('click', (e) => {
         if (!this.animComplete) return false
 
+        buttons[nextEl].classList.toggle('active')
+        buttons[i].classList.toggle('active')
+        
         if (i > nextEl && nextEl !== elementsL - 1) {        
           this.animComplete = false
 
@@ -97,10 +101,6 @@ class OnePage {
         scrollCount--
       }
     })
-
-    if (typeof buttons === 'undefined') return 0
-
-    var buttons = buttons
 
     for (let i = 0; i < buttons.length; i++) {
       buttons[i].addEventListener('click', (e) => {
