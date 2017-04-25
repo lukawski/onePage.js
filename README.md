@@ -21,7 +21,7 @@
 
 You can choose one of two modes: **stack** or **normal**.
 
-### Stack mode
+### Normal mode
 
 #### HTML markup
 
@@ -44,7 +44,7 @@ const page = new OnePage({
 page.initPage()
 ```
 
-### Normal mode
+### Stack mode
 
 #### HTML markup
 
