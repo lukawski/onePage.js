@@ -9,6 +9,7 @@ class OnePage {
   stackMode (elements, buttons) {
     const elementsL = elements.length
     var nextEl = 0
+    var translationValue = 0
 
     for (let i = 0; i < elementsL; i++) {
       elements[i].style.zIndex = elementsL - i
@@ -18,11 +19,16 @@ class OnePage {
     }
 
     window.addEventListener('keydown', (e) => {
-      if (e.which === 37 || e.which === 39) { // left & right
-        if (e.which === 37) {
+      if (!this.animComplete) return
 
-        } else {
-
+      if ((e.which === 37 || e.which === 39) && elements[nextEl].classList.contains('horizontal')) { // left & right
+        if (e.which === 37 && translationValue) {
+          console.log(translationValue)
+          translationValue -= 1
+          elements[nextEl].style.transform = `translate(-${translationValue}00vw, 0)`
+        } else if (e.which === 39 && translationValue < elements[nextEl].children.length - 1) {
+          translationValue += 1
+          elements[nextEl].style.transform = `translate(-${translationValue}00vw, 0)`
         }
       } else if (e.which === 38 || e.which === 40) { // up & down
         if (e.which === 38)
@@ -173,9 +179,9 @@ class OnePage {
   }
 
   initPage () {
-    var elements = document.querySelectorAll('.section')
+    const elements = document.querySelectorAll('.section')
     var buttons
-    var horizontalElements = document.querySelectorAll('.horizontal')
+    const horizontalElements = document.querySelectorAll('.horizontal')
 
     if (horizontalElements.length > 1) {
       for (let i = 0; i < horizontalElements.length; i++) {

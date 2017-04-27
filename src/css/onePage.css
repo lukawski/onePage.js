@@ -40,7 +40,7 @@ html, body {
 }
 
 .outofview {
-  transform: translateY(-100vh);
+  transform: translate(0, -100vh) !important;
   transform-style: preserve-3d;
 }
 
