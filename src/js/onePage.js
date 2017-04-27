@@ -17,27 +17,26 @@ class OnePage {
       })
     }
 
+    window.addEventListener('keydown', (e) => {
+      if (e.which === 37 || e.which === 39) { // left & right
+
+      } else if (e.which === 38 || e.which === 40) { // up & down
+        if (e.which === 38)
+          up.call(this)
+        else
+          down.call(this)
+      } else {
+        return
+      }
+    })
+
     window.addEventListener('wheel', (e) => {
       if (!this.animComplete) return false
       
-      if (e.deltaY > 0 && nextEl !== elementsL - 1) {        
-        this.animComplete = false
-
-        buttons[nextEl].classList.toggle('active')
-        elements[nextEl].classList.toggle('outofview')
-
-        nextEl++
-        
-        buttons[nextEl].classList.toggle('active')
-      } else if (e.deltaY < 0 && nextEl) {        
-        this.animComplete = false
-
-        buttons[nextEl].classList.toggle('active')
-
-        nextEl--
-        
-        buttons[nextEl].classList.toggle('active')
-        elements[nextEl].classList.toggle('outofview')
+      if (e.deltaY > 0) {
+        down.call(this)
+      } else if (e.deltaY < 0) {
+        up.call(this)
       }
     })
     
@@ -66,6 +65,32 @@ class OnePage {
           nextEl = i
         }
       })
+    }
+
+    function up () {
+      if (!nextEl) return false
+
+      this.animComplete = false
+
+      buttons[nextEl].classList.toggle('active')
+
+      nextEl--
+
+      buttons[nextEl].classList.toggle('active')
+      elements[nextEl].classList.toggle('outofview')
+    }
+
+    function down () {
+      if (nextEl === elementsL - 1) return false
+
+      this.animComplete = false
+
+      buttons[nextEl].classList.toggle('active')
+      elements[nextEl].classList.toggle('outofview')
+
+      nextEl++
+
+      buttons[nextEl].classList.toggle('active')
     }
   }
 
