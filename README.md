@@ -9,8 +9,8 @@
 ## To do
 - [ ] responsive navbar
 - [ ] touch support
-- [ ] navigating by arrow keys
-- [ ] horizontal scroll
+- [x] navigating by arrow keys
+- [x] horizontal scroll
 
 ## Usage
 
