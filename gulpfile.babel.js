@@ -19,7 +19,7 @@ gulp.task('serve', ['js', 'css'], () => {
 
   gulp.watch(jsPath, ['js'])
   gulp.watch(cssPath, ['css'])
-  gulp.watch('./*.html').on('change', browserSync.reload)
+  gulp.watch('./docs/*.html').on('change', browserSync.reload)
 })
 
 gulp.task('js', () => {

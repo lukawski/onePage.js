@@ -5,12 +5,12 @@
     <meta charset='utf-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <meta name="description" content="JavaScript plugin for creating full page websites and presentations.">
-    <meta name='theme-color', content='#CAE4FD'>
+    <meta name='theme-color' content='#CAE4FD'>
     <link href="https://fonts.googleapis.com/css?family=Roboto&amp;subset=latin-ext" rel="stylesheet">
     <style>
       html {
         font-family: 'Roboto', sans-serif;
-        font-size: 16px;
+        font-size: 100%;
       }
       h1,h2,h3,h4,h5,h6 {
         margin: 0;
@@ -56,6 +56,7 @@
       }
     </style>
     <script src="https://use.fontawesome.com/fd43abc220.js"></script>
+    <script src="onePage.min.js"></script>
     <link rel="stylesheet" href="onePage.min.css">
   </head>
   <body>
@@ -66,6 +67,9 @@
         </button>
         <button type="button" class="link">
           About
+        </button>
+        <button type="button" class="link">
+          Horizontal scroll
         </button>
         <button type="button" class="link">
           Contact
@@ -92,7 +96,24 @@
         </div>
       </section>
 
-      <section class="section stack red center">
+      <section class="section stack horizontal red">
+        <section class="center">
+          <header>
+            <h2 class="bigger">There is also horizontal scroll</h2>
+            <p class="bigger-p">Try to press left or right arrow key</p>
+          </header>
+        </section>
+
+        <section class="center">
+          <h1>1</h1>
+        </section>
+
+        <section class="center">
+          <h1>2</h1>
+        </section>
+      </section>
+
+      <section class="section stack blue center">
         <header class="text-center">
           <h1>You can contact me directly at <a href="mailto:ka.lukawski@gmail.com" class="white">ka.lukawski@gmail.com</a> </h1>
           <h2 class="bigger mt"> Or find me here: </h2>
@@ -101,8 +122,7 @@
         </header>
       </section>
     </div>
-    
-    <script src="onePage.min.js"></script>
+
     <script src="index.js"></script>
 
     <script>

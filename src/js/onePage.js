@@ -19,7 +19,11 @@ class OnePage {
 
     window.addEventListener('keydown', (e) => {
       if (e.which === 37 || e.which === 39) { // left & right
+        if (e.which === 37) {
 
+        } else {
+
+        }
       } else if (e.which === 38 || e.which === 40) { // up & down
         if (e.which === 38)
           up.call(this)
@@ -171,6 +175,17 @@ class OnePage {
   initPage () {
     var elements = document.querySelectorAll('.section')
     var buttons
+    var horizontalElements = document.querySelectorAll('.horizontal')
+
+    if (horizontalElements.length > 1) {
+      for (let i = 0; i < horizontalElements.length; i++) {
+        let width = horizontalElements[i].children.length * 100
+        horizontalElements[i].style.width = `${width}%`
+      }
+    } else {
+      let width = horizontalElements[0].children.length * 100
+      horizontalElements[0].style.width = `${width}%`
+    }
 
     if (!elements.length) return console.error('Couldn\'t fetch elements')
 
